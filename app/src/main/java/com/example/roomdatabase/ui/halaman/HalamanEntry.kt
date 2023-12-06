@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -26,6 +27,7 @@ import com.example.roomdatabase.model.EntryViewModel
 import com.example.roomdatabase.model.PenyediaViewModel
 import com.example.roomdatabase.model.UIStateSiswa
 import com.example.roomdatabase.navigasi.DestinasiNavigasi
+import com.example.roomdatabase.navigasi.SiswaTopAppBar
 import kotlinx.coroutines.launch
 import java.security.KeyStore.Entry
 
@@ -46,7 +48,7 @@ fun EntrySiswaScreen(
     Scaffold (
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
-            SiswaTopAppbar(
+            SiswaTopAppBar(
                 title = stringResource(DestinasiEntry.titleRes),
                 canNavigateBack = true,
                 scrollBehavior = scrollBehavior
@@ -111,26 +113,26 @@ fun FormInputSiswa(
     ) {
         OutlinedTextField(
             value = detailSiswa.nama,
-            onValueChange = {onValueChange(detailSiswa.copy(nama=it)) },
-            label = { Text(stringResource(R.string.nama)) },
+            onValueChange = {onValueChange(detailSiswa.copy(nama = it))},
+            label = { Text(stringResource(R.string.nama))},
             modifier = Modifier.fillMaxWidth(),
-            enbled = enabled,
+            enabled = enabled,
             singleLine = true
         )
         OutlinedTextField(
             value = detailSiswa.alamat,
-            onValueChange = {onValueChange(detailSiswa.copy(alamat=it)) },
-            label = { Text(stringResource(R.string.alamat)) },
+            onValueChange = {onValueChange(detailSiswa.copy(nama = it))},
+            label = { Text(stringResource(R.string.alamat))},
             modifier = Modifier.fillMaxWidth(),
-            enbled = enabled,
+            enabled = enabled,
             singleLine = true
         )
         OutlinedTextField(
             value = detailSiswa.telpon,
-            onValueChange = {onValueChange(detailSiswa.copy(telpon=it)) },
-            label = { Text(stringResource(R.string.telpon)) },
+            onValueChange = {onValueChange(detailSiswa.copy(nama = it))},
+            label = { Text(stringResource(R.string.telpon))},
             modifier = Modifier.fillMaxWidth(),
-            enbled = enabled,
+            enabled = enabled,
             singleLine = true
         )
 
