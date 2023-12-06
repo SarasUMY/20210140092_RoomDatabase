@@ -3,7 +3,6 @@ package com.example.roomdatabase.repositori
 import com.example.roomdatabase.data.Siswa
 import com.example.roomdatabase.data.SiswaDao
 import kotlinx.coroutines.flow.Flow
-
 class OfflineRepositoriSiswa(private val siswaDao: SiswaDao):RepositoriSiswa {
     override fun getAllSiswaStream(): Flow<List<Siswa>> {
         return siswaDao.getAllSiswa()
@@ -13,7 +12,7 @@ class OfflineRepositoriSiswa(private val siswaDao: SiswaDao):RepositoriSiswa {
         return siswaDao.getSiswa(id)
     }
 
-    override suspend fun InsertSiswa(siswa: Siswa) {
+    override suspend fun insertSiswa(siswa: Siswa) {
         return siswaDao.insert(siswa)
     }
 
